@@ -71,4 +71,5 @@ def extract_usernames_from_json(filepath):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render provides the PORT environment variable
+    app.run(host='0.0.0.0', port=port, debug=True)

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Results</h1>
+    </header>
+
+    <main>
+        <h2>Users Not Following Back:</h2>
+        <ul>
+            {% for username in not_following_back %}
+                <li>{{ username }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Users Not Followed By:</h2>
+        <ul>
+            {% for username in not_followed_by %}
+                <li>{{ username }}</li>
+            {% endfor %}
+        </ul>
+
+        <br>
+        <a href="/">Go Back to Upload Page</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your App</p>
+    </footer>
+</body>
+</html>

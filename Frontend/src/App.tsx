@@ -252,7 +252,7 @@ const App = () => {
     formData.append('following_file', followingFile);
 
     try {
-      const response = await axios.post<Result>('http://localhost:5000/upload', formData, {
+      const response = await axios.post<Result>(`${import.meta.env.VITE_BACKEND_URL}/upload`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setResult(response.data);
